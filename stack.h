@@ -1,0 +1,97 @@
+// Dinh nghia stack dung danh sach lien ket don
+// Dinh nghia 1 nut
+struct StackNode{
+	char item;
+	StackNode *next;
+};
+
+// Dinh nghia Stack
+struct Stack{
+	StackNode *top;
+};
+
+// Khoi tao stack
+Stack *stackConstruct(){
+	Stack *s;
+	s = (Stack*) malloc (sizeof(Stack));
+	if(s==NULL){
+//		No memory
+		return NULL; 
+	}
+	s->top = NULL;
+	return s;
+}
+
+// Huy stack
+void stackDestroy(Stack *s){
+	while(!stackEmpty(s)){
+		stackPop(s);
+	}
+	free(s);
+}
+
+// Kiem tra stack rong
+int stackEmpty(Stack *s){
+	return (s->top == NULL);
+}
+
+// Thong bao stack tran
+int stackFull(Stack *s){
+	printf("\n NO MEMORY! STACK IS FULL ");
+	getch();
+	return 1;
+}
+
+// Dua ra cac phan tu cua ngan xep
+void disp(Stack *s){
+	StackNode *node;
+	int ct = 0;
+	char m;
+	printf("\n\n DANH SACH CAC PHAN TU CUA STACK \N\N");
+	if(stackEmpty(s)){
+		printf("\n\n EMPTY STACK ");
+		getch();
+	}else{
+		node = s->top;
+		do{
+			m = node->item;
+			printf("%c", m);
+			ct++;
+			if(ct % 9 == 0) printf("\n");
+			node = node->next;
+		}while(!(node == NULL));
+		printf("\n");
+	}
+}
+
+// Them phan tu vao stack
+int stackPush(Stack *s, char item){
+	StackNode *node;
+	node = (StackNod*) malloc (sizeof(StackNode));
+	if(node == NULL){
+		stackFull();
+//		Tran stack, het bo nho
+		return 1;
+	}
+	node->item = item;
+	node->next = s->top;
+	s->top = node;
+	return 0;
+}
+
+// Loai bo va lay phan tu ra khoi stack
+char stackPop(Stack *s){
+	char item;
+	StackNode *node;
+	if(stackEmpty(s)){
+//		Empty stack, can't pop
+	return NULL;
+	}
+	node = s->top;
+	item = node->item;
+	s->top = node->next;
+	free(node);
+	return item;
+}
+
+
