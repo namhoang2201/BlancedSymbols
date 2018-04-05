@@ -1,14 +1,14 @@
 // Dinh nghia stack dung danh sach lien ket don
 // Dinh nghia 1 nut
-struct StackNode{
+typedef struct StackNode{
 	char item;
-	StackNode *next;
-};
+	struct StackNode *next;
+}StackNode;
 
 // Dinh nghia Stack
-struct Stack{
+typedef struct Stack{
 	StackNode *top;
-};
+}Stack;
 
 // Khoi tao stack
 Stack *stackConstruct(){
@@ -47,7 +47,7 @@ void disp(Stack *s){
 	StackNode *node;
 	int ct = 0;
 	char m;
-	printf("\n\n DANH SACH CAC PHAN TU CUA STACK \N\N");
+	printf("\n\n DANH SACH CAC PHAN TU CUA STACK \n\n");
 	if(stackEmpty(s)){
 		printf("\n\n EMPTY STACK ");
 		getch();
@@ -67,9 +67,9 @@ void disp(Stack *s){
 // Them phan tu vao stack
 int stackPush(Stack *s, char item){
 	StackNode *node;
-	node = (StackNod*) malloc (sizeof(StackNode));
+	node = (StackNode*) malloc (sizeof(StackNode));
 	if(node == NULL){
-		stackFull();
+		stackFull(s);
 //		Tran stack, het bo nho
 		return 1;
 	}
@@ -80,12 +80,12 @@ int stackPush(Stack *s, char item){
 }
 
 // Loai bo va lay phan tu ra khoi stack
-char stackPop(Stack *s){
+char StackPop(Stack *s){
 	char item;
 	StackNode *node;
 	if(stackEmpty(s)){
 //		Empty stack, can't pop
-	return NULL;
+	return 'a';
 	}
 	node = s->top;
 	item = node->item;
