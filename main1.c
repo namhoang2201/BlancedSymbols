@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<conio.h>
 #include<stdbool.h>
+#include<locale.h>
 #include<stdlib.h>
 #include "stack.h"
 
@@ -38,9 +39,32 @@ bool matches(char x, char y){
 	return false;
 }
 
+char *readFile(char *fileName) {
+	char *locale = setlocale(LC_ALL, "en_US.utf8");
+    FILE *file = fopen(fileName, "r");
+    char *code;
+    size_t n = 0;
+    int c;
+
+    if (file == NULL) return NULL; //could not open file
+    fseek(file, 0, SEEK_END);
+    long f_size = ftell(file);
+    fseek(file, 0, SEEK_SET);
+    code = (char*)malloc(f_size);
+
+    while ((c = fgetc(file)) != EOF) {
+        code[n++] = (char)c;
+    }
+
+    code[n] = '\0';        
+
+    return code;
+}
+
 bool isBalanced(char xau){
 	
 }
+
 int main(){
 	
 	
