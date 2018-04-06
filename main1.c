@@ -7,7 +7,7 @@ _Bool isTerm(char c){
 
 };
 
-_Bool isOpenTer(){
+_Bool isOpenTerm(){
 	
 }
 
@@ -19,5 +19,6 @@ _Bool isBalanced(char xau){
 	
 }
 int main(){
+	char Terms[3][2] = {{'(',')'},{'[',']'},{'{','}'}};
 	
 }
