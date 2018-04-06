@@ -18,7 +18,7 @@ bool isTerm(char c){
 	return false;
 };
 
-bool isOpenTerm(){
+bool isOpenTerm(char c){
 	int i;
 	for(i=0; i<3; i++){
 		if(*(Terms[i])== c){
@@ -29,7 +29,13 @@ bool isOpenTerm(){
 }
 
 bool matches(char x, char y){
-	
+	int i,j;
+	for(i=0; i<3; i++){
+		if((*(Terms[i])==x)&&(Terms[i][1])==y){
+			return true;
+		}
+	}
+	return false;
 }
 
 bool isBalanced(char xau){
