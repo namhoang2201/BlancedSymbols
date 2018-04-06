@@ -61,7 +61,9 @@ char *readFile(char *fileName) {
     return code;
 }
 
-bool isBalanced(char xau){
+bool isBalanced(char *xau){
+//	Init a stack
+	Stack* s = stackConstruct();
 	
 }
 

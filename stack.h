@@ -22,16 +22,8 @@ Stack *stackConstruct(){
 	return s;
 }
 
-// Huy stack
-void stackDestroy(Stack *s){
-	while(!stackEmpty(s)){
-		stackPop(s);
-	}
-	free(s);
-}
-
 // Kiem tra stack rong
-int stackEmpty(Stack *s){
+bool stackEmpty(Stack *s){
 	return (s->top == NULL);
 }
 
@@ -80,7 +72,7 @@ int stackPush(Stack *s, char item){
 }
 
 // Loai bo va lay phan tu ra khoi stack
-char StackPop(Stack *s){
+char stackPop(Stack *s){
 	char item;
 	StackNode *node;
 	if(stackEmpty(s)){
@@ -94,4 +86,17 @@ char StackPop(Stack *s){
 	return item;
 }
 
+char top(Stack *s){
+	if(stackEmpty(s)){
+		return NULL;
+	}
+	return s->top->item;
+}
 
+// Huy stack
+void stackDestroy(Stack *s){
+	while(!stackEmpty(s)){
+		stackPop(s);
+	}
+	free(s);
+}
