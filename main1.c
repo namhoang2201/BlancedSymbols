@@ -19,7 +19,13 @@ bool isTerm(char c){
 };
 
 bool isOpenTerm(){
-	
+	int i;
+	for(i=0; i<3; i++){
+		if(*(Terms[i])== c){
+			return true;
+		}
+	}
+	return false;	
 }
 
 bool matches(char x, char y){
