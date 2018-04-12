@@ -86,9 +86,10 @@ char stackPop(Stack *s){
 	return item;
 }
 
+//		Tra ve gia tri phan tu o dinh ngan xep nhung khong lay ra
 char top(Stack *s){
 	if(stackEmpty(s)){
-		return NULL;
+		return 'a';
 	}
 	return s->top->item;
 }

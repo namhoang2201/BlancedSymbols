@@ -64,7 +64,24 @@ char *readFile(char *fileName) {
 bool isBalanced(char *xau){
 //	Init a stack
 	Stack* s = stackConstruct();
-	
+	int i;
+	for(i=0; i< strlen(xau); i++){
+		if(isTerm(xau[i])){
+			if(isOpenTerm(xau[i])){
+				stackPush(s, xau[i]);
+			}else{
+				if(matches(top(s)), xau[i]){
+					contiune;
+				}else{
+					return false;
+				}
+			}
+		}
+	}
+	if(stackEmpty(s)){
+		return true;
+	}
+	return false;
 }
 
 int main(){
