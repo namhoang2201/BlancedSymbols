@@ -87,23 +87,26 @@ bool isBalanced(char *xau){
 
 int main(){
 	int n;
+	char *fileName;
 	printf("\nCHUONG TRINH KIEM TRA SU CAN BANG BIEU TUONG (DAU NGOAC HOAC CAC THE HTML)");
 	do{
-		printf("\n\nMoi ban chon chuc nang: ");
-	printf("\n\t1. Kiem tra su can bang chuoi dau ngoac don.");
-	printf("\n\t2. Kiem tra su can bang dau ngoac trong ma nguon C++.");
-	printf("\n\t3. Kiem tra su can bang cua cac the trong ma nguon HTML.");
-	printf("\n\t4. Ket thuc !\n");
-	scanf("%d", &n);
-	switch(n){
-		case 1: printf("\n\tKiem tra su can bang chuoi dau ngoac don: ");
-				break;
-		case 2: printf("\n\tKiem tra su can bang dau ngoac trong ma nguon C++: ");
-				break;
-		case 3: printf("\n\tKiem tra su can bang cua cac the trong ma nguon HTML: ");
-				break;
-		case 4: return 1;
-	}
+		printf("\n---------------------------------------------------------------------");
+		printf("\n\nMoi ban chon chuc nang: 1, 2, 3 hoac 4");
+		printf("\n\t1. Kiem tra su can bang chuoi dau ngoac don.");
+		printf("\n\t2. Kiem tra su can bang dau ngoac trong ma nguon C++.");
+		printf("\n\t3. Kiem tra su can bang cua cac the trong ma nguon HTML.");
+		printf("\n\t4. Ket thuc !\n");
+		scanf("%d", &n);
+		switch(n){
+			case 1: printf("\n\tKiem tra su can bang chuoi dau ngoac don: ");
+					fileName = "chuoingoacdon.txt";
+					break;
+			case 2: printf("\n\tKiem tra su can bang dau ngoac trong ma nguon C++: ");
+					break;
+			case 3: printf("\n\tKiem tra su can bang cua cac the trong ma nguon HTML: ");
+					break;
+			case 4: return 1;
+		}
 	}while(n!=4);
 	
 }
