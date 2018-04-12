@@ -70,8 +70,9 @@ bool isBalanced(char *xau){
 			if(isOpenTerm(xau[i])){
 				stackPush(s, xau[i]);
 			}else{
-				if(matches(top(s)), xau[i]){
-					contiune;
+				if(matches(top(s), xau[i])){
+					stackPop(s);
+					continue;
 				}else{
 					return false;
 				}
