@@ -109,14 +109,14 @@ int main(){
 					}
 					break;
 			case 2: printf("\n\tKiem tra su can bang dau ngoac trong ma nguon C++: ");
-					char *fileName1 = "chuoingoacdon.txt";
-					printf("\n\tFile dau ngoac don co ten: %s", fileName1);
+					char *fileName1 = "cplusplus.cpp";
+					printf("\n\tFile C++ co ten: %s", fileName1);
 					printf("\n\tNoi dung cua file la: ");
-					printf("\n\t%s", readFile(fileName1));
+					printf("\n%s", readFile(fileName1));
 					if(isBalanced(readFile(fileName1))){
-						printf("\n\tChuoi ngoac don la CAN BANG !");
+						printf("\n\tFile C++ CAN BANG ngoac don !");
 					}else{
-						printf("\n\tChuoi ngoac don la KHONG CAN BANG !");
+						printf("\n\tFile C++ KHONG CAN BANG ngoac don !");
 					}
 					break;
 			case 3: printf("\n\tKiem tra su can bang cua cac the trong ma nguon HTML: ");
