@@ -87,7 +87,6 @@ bool isBalanced(char *xau){
 
 int main(){
 	int n;
-	char *fileName;
 	printf("\nCHUONG TRINH KIEM TRA SU CAN BANG BIEU TUONG (DAU NGOAC HOAC CAC THE HTML)");
 	do{
 		printf("\n---------------------------------------------------------------------");
@@ -99,7 +98,15 @@ int main(){
 		scanf("%d", &n);
 		switch(n){
 			case 1: printf("\n\tKiem tra su can bang chuoi dau ngoac don: ");
-					fileName = "chuoingoacdon.txt";
+					char *fileName = "chuoingoacdon.txt";
+					printf("\n\tFile dau ngoac don co ten: %s", fileName);
+					printf("\n\tNoi dung cua file la: ");
+					printf("\n\t%s", readFile(fileName));
+					if(isBalanced(readFile(fileName))){
+						printf("\n\tChuoi ngoac don la CAN BANG !");
+					}else{
+						printf("\n\tChuoi ngoac don la KHONG CAN BANG !");
+					}
 					break;
 			case 2: printf("\n\tKiem tra su can bang dau ngoac trong ma nguon C++: ");
 					break;
