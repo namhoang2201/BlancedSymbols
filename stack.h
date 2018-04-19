@@ -15,7 +15,7 @@ Stack *stackConstruct(){
 	Stack *s;
 	s = (Stack*) malloc (sizeof(Stack));
 	if(s==NULL){
-//		No memory
+//	No memory
 		return NULL; 
 	}
 	s->top = NULL;
