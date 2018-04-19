@@ -28,7 +28,7 @@ bool stackEmpty(Stack *s){
 }
 
 // Thong bao stack tran
-int stackFull(Stack *s){
+int stackFull(){
 	printf("\n NO MEMORY! STACK IS FULL ");
 	getch();
 	return 1;

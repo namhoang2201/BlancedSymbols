@@ -29,6 +29,13 @@ bool stackHtmlEmpty(StackHtml *s){
 	return (s->top == NULL);
 }
 
+// Thong bao StackHtml tran
+int stackHtmlFull(){
+	printf("\n NO MEMORY! STACK IS FULL ");
+	getch();
+	return 1;
+}
+
 
 
 
