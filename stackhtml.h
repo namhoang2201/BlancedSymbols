@@ -74,7 +74,13 @@ char topHtml(StackHtml *s){
 	return s->top->item;
 }
 
-
+// Huy StackHtml
+void stackHtmlDestroy(StackHtml *s){
+	while(!stackHtmlEmpty(s)){
+		stackHtmlPop(s);
+	}
+	free(s);
+}
 
 
 
