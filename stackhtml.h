@@ -51,6 +51,24 @@ int stackHtmlPush(StackHtml *s, char[] item){
 	return 0;
 }
 
+// Loai bo va lay phan tu ra khoi StackHtml
+char stackHtmlPop(StackHtml *s){
+	char[] item;
+	StackNodeHtml *node;
+	if(stackHtmlEmpty(s)){
+//		Empty stack, can't pop
+	return 'a';
+	}
+	node = s->top;
+	item = node->item;
+	s->top = node->next;
+	free(node);
+	return item;
+}
+
+
+
+
 
 
 
