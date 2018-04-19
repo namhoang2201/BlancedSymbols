@@ -24,4 +24,12 @@ StackHtml *stackHtmlConstruct(){
 	return s;
 }
 
+// Kiem tra StackHtml rong
+bool stackHtmlEmpty(StackHtml *s){
+	return (s->top == NULL);
+}
+
+
+
+
 
