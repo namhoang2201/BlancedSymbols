@@ -36,6 +36,21 @@ int stackHtmlFull(){
 	return 1;
 }
 
+// Them phan tu vao StackHtml
+int stackHtmlPush(StackHtml *s, char[] item){
+	StackNodeHtml *node;
+	node = (StackNodeHtml*) malloc (sizeof(StackNodeHtml));
+	if(node == NULL){
+		stackHtmlFull(s);
+//		Tran stack, het bo nho
+		return 1;
+	}
+	node->item = item;
+	node->next = s->top;
+	s->top = node;
+	return 0;
+}
+
 
 
 
