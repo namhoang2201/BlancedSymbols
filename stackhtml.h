@@ -66,6 +66,14 @@ char stackHtmlPop(StackHtml *s){
 	return item;
 }
 
+//	Tra ve gia tri phan tu o dinh ngan xep nhung khong lay ra
+char topHtml(StackHtml *s){
+	if(stackHtmlEmpty(s)){
+		return 'a';
+	}
+	return s->top->item;
+}
+
 
 
 
