@@ -5,3 +5,7 @@ typedef struct stackNodeHtml{
 	char item[10];
 	struct stackNodeHtml *next;
 };
+
+typedef struct stackHtml{
+	stackNodeHtml *top;
+};
