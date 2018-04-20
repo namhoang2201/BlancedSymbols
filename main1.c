@@ -6,6 +6,13 @@
 #include "stack.h"
 
 char Terms[3][2] = {{'(',')'},{'[',']'},{'{','}'}};
+char **HtmlTags = {{'<html>','</html>'}, {'<head>','</head>'}, {'<body>','</body>'}, {'<title>','</title>'},
+		{'<h1>','</h1>'}, {'<h2>','</h2>'}, {'<h3>','</h3>'}, {'<h4>','</h4>'}, {'<h5>','</h5>'}, {'<h6>','</h6>'},
+		{'<ul>','</ul>'}, {'<ol>','</ol>'}, {'<li>','</li>'}, {'<dl>','</dl>'}, {'<dt>','</dt>'}, {'<table>','</table>'},
+		{'<td>','</td>'}, {'<tr>','</tr>'},{'<th>','</th>'}, {'<form>','</form>'}, {'<strong>','</strong>'},
+		{'<div>','</div>'}, {'<textarea>','</textarea>'}, {'<span>','</span>'}, {'<pre>','</pre>'}, {'<em>','</em>'},
+		{'<frameset>','</frameset>'}, {'<dd>','</dd>'}, {'<script>','</script>'}, {'<b>','</b>'}, {'<i>','</i>'},
+		{'<fieldset>','</fieldset>'}, {'<font>','</font>'}, {'<sub>','</sub>'}, {'<sup>','</sup>'} };
 
 bool isTerm(char c){
 	int i,j;
