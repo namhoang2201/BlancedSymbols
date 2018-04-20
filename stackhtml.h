@@ -5,7 +5,7 @@
 typedef struct StackNodeHtml{
 	char item[10];
 	struct StackNodeHtml *next;
-};
+} StackNodeHtml;
 
 // Dinh nghia stackHtml
 typedef struct StackHtml{
@@ -82,6 +82,26 @@ void stackHtmlDestroy(StackHtml *s){
 	free(s);
 }
 
+void dispHtml(StackHtml *s){
+	StackNodeHtml *node;
+	int ct = 0;
+	char *m;
+	printf("\n\n DANH SACH CAC PHAN TU CUA STACK \n\n");
+	if(stackHtmlEmpty(s)){
+		printf("\n\n EMPTY STACK ");
+		getch();
+	}else{
+		node = s->top;
+		do{
+			m = node->item;
+			printf("%s\t", m);
+			ct++;
+			if(ct % 9 == 0) printf("\n");
+			node = node->next;
+		}while(!(node == NULL));
+		printf("\n");
+	}
+}
 
 
 

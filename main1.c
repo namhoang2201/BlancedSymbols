@@ -17,7 +17,7 @@ bool isTerm(char c){
 		}
 	}
 	return false;
-};
+}
 
 bool isOpenTerm(char c){
 	int i;
@@ -120,6 +120,8 @@ int main(){
 					}
 					break;
 			case 3: printf("\n\tKiem tra su can bang cua cac the trong ma nguon HTML: ");
+					
+			
 					break;
 			case 4: return 1;
 		}

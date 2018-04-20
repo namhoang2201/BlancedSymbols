@@ -70,8 +70,8 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit3]
-FileName=cplusplusfile.cpp
+[Unit4]
+FileName=cplusplus.cpp
 CompileCpp=0
 Folder=
 Compile=1
@@ -80,8 +80,8 @@ Priority=1000
 OverrideBuildCmd=0
 BuildCmd=
 
-[Unit4]
-FileName=stackhtml.h
+[Unit3]
+FileName=stackHtml.h
 CompileCpp=0
 Folder=
 Compile=1

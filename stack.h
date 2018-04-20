@@ -47,7 +47,7 @@ void disp(Stack *s){
 		node = s->top;
 		do{
 			m = node->item;
-			printf("%c", m);
+			printf("%c\t", m);
 			ct++;
 			if(ct % 9 == 0) printf("\n");
 			node = node->next;
