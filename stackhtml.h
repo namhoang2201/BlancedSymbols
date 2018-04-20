@@ -41,35 +41,35 @@ int stackHtmlPush(StackHtml *s, char[] item){
 	StackNodeHtml *node;
 	node = (StackNodeHtml*) malloc (sizeof(StackNodeHtml));
 	if(node == NULL){
-		stackHtmlFull(s);
+		stackHtmlFull();
 //		Tran stack, het bo nho
 		return 1;
 	}
-	node->item = item;
+	strcpy(node->item,item);
 	node->next = s->top;
 	s->top = node;
 	return 0;
 }
 
 // Loai bo va lay phan tu ra khoi StackHtml
-char stackHtmlPop(StackHtml *s){
-	char[] item;
+char *stackHtmlPop(StackHtml *s){
+	char item[10];
 	StackNodeHtml *node;
 	if(stackHtmlEmpty(s)){
 //		Empty stack, can't pop
-	return 'a';
+	return NULL;
 	}
 	node = s->top;
-	item = node->item;
+	strcpy(item,node->item);
 	s->top = node->next;
 	free(node);
 	return item;
 }
 
 //	Tra ve gia tri phan tu o dinh ngan xep nhung khong lay ra
-char topHtml(StackHtml *s){
+char *topHtml(StackHtml *s){
 	if(stackHtmlEmpty(s)){
-		return 'a';
+		return NULL;
 	}
 	return s->top->item;
 }
