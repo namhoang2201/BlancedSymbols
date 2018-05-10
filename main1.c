@@ -46,6 +46,7 @@ bool matches(char x, char y){
 	return false;
 }
 
+// Doc tung ki tu cua 1 file tu dau den cuoi roi sao chep vao mot mang ten la code, tra ve dia chi cua mang code
 char *readFile(char *fileName) {
 	char *locale = setlocale(LC_ALL, "en_US.utf8");
     FILE *file = fopen(fileName, "r");
