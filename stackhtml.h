@@ -45,7 +45,7 @@ int stackHtmlPush(StackHtml *s, char[] item){
 //		Tran stack, het bo nho
 		return 1;
 	}
-	strcpy(node->item,item);
+	strcpy(node->item, item);
 	node->next = s->top;
 	s->top = node;
 	return 0;
@@ -82,6 +82,7 @@ void stackHtmlDestroy(StackHtml *s){
 	free(s);
 }
 
+// Hien thi cac phan tu cua StackHtml
 void dispHtml(StackHtml *s){
 	StackNodeHtml *node;
 	int ct = 0;
