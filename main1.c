@@ -6,6 +6,7 @@
 #include "stack.h"
 
 char Terms[3][2] = {{'(',')'},{'[',']'},{'{','}'}};
+
 char **HtmlTags = {{'<html>','</html>'}, {'<head>','</head>'}, {'<body>','</body>'}, {'<title>','</title>'},
 		{'<h1>','</h1>'}, {'<h2>','</h2>'}, {'<h3>','</h3>'}, {'<h4>','</h4>'}, {'<h5>','</h5>'}, {'<h6>','</h6>'},
 		{'<ul>','</ul>'}, {'<ol>','</ol>'}, {'<li>','</li>'}, {'<dl>','</dl>'}, {'<dt>','</dt>'}, {'<table>','</table>'},
@@ -40,6 +41,19 @@ char *readWord(char *code, int* i, char *word){
 	}
 	word[pos]= '\0';
 	return word;
+}
+
+// Kiem tra xem tu dua vao co phai la the HTML hay khong ?
+bool isHtmlTerm(char *word){
+	int i, j;
+	for(i = 0; i< 35; i++){
+		for(j =0; j< 2; j++){
+			if(strcmp(word , HtmlTags[i][j])){
+				return true;
+			}
+		}
+	}
+	return false;
 }
 
 // Kiem tra xem ky tu c dua vao co phai la dau ngoac hay khong ?
