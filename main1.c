@@ -14,6 +14,11 @@ char **HtmlTags = {{'<html>','</html>'}, {'<head>','</head>'}, {'<body>','</body
 		{'<frameset>','</frameset>'}, {'<dd>','</dd>'}, {'<script>','</script>'}, {'<b>','</b>'}, {'<i>','</i>'},
 		{'<fieldset>','</fieldset>'}, {'<font>','</font>'}, {'<sub>','</sub>'}, {'<sup>','</sup>'} };
 
+// Kiem tra mot ki tu co phai la khoang trang khong
+int IsWhitespace(int ch) {
+	return (ch == ' ') || (ch == '\n') || (ch == '\t');
+}
+
 bool isTerm(char c){
 	int i,j;
 	for(i=0; i<3; i++){
