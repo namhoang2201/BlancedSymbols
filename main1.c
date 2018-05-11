@@ -44,11 +44,11 @@ char *readWord(char *code, int* i, char *word){
 }
 
 // Kiem tra xem tu dua vao co phai la the HTML hay khong ?
-bool isHtmlTerm(char *word){
+bool isHtmlTag(char *word){
 	int i, j;
 	for(i = 0; i< 35; i++){
 		for(j =0; j< 2; j++){
-			if(strcmp(word , HtmlTags[i][j])){
+			if(strcmp(word , HtmlTags[i][j]) == 0){
 				return true;
 			}
 		}
@@ -68,6 +68,7 @@ bool isTerm(char c){
 	}
 	return false;
 }
+
 
 // Kiem tra xem ky tu c dua vao co phai la ky tu mo ngoac hay khong ?
 bool isOpenTerm(char c){
