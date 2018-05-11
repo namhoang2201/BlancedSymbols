@@ -19,6 +19,28 @@ int IsWhitespace(int ch) {
 	return (ch == ' ') || (ch == '\n') || (ch == '\t');
 }
 
+// Doc tung tu mot, dau vao la con tro code toi mang cac ki tu
+char *readWord(char *code, int* i, char *word){
+	int ch, pos = 0;
+	ch = code[*i];
+// Bo qua cac ki tu la khoang trang	
+	while(IsWhitespace(ch)){
+		(*i)++;
+		ch = code[*i];
+	}
+	
+// Gap cac ki tu khac khoang trang thi luu vao mot tu, con tro word la dia chi cua mang chua tu
+	while(!IsWhitespace(ch) && (ch != EOF)){
+		if(pos < 20){
+			word[pos] = (char) ch;
+			pos++;
+			(*i)++;
+		}
+		ch = code[*i];
+	}
+	word[pos]= '\0';
+	return word;
+}
 
 // Kiem tra xem ky tu c dua vao co phai la dau ngoac hay khong ?
 bool isTerm(char c){
