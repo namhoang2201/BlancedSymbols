@@ -19,6 +19,8 @@ int IsWhitespace(int ch) {
 	return (ch == ' ') || (ch == '\n') || (ch == '\t');
 }
 
+
+// Kiem tra xem ky tu c dua vao co phai la dau ngoac hay khong ?
 bool isTerm(char c){
 	int i,j;
 	for(i=0; i<3; i++){
@@ -31,6 +33,7 @@ bool isTerm(char c){
 	return false;
 }
 
+// Kiem tra xem ky tu c dua vao co phai la ky tu mo ngoac hay khong ?
 bool isOpenTerm(char c){
 	int i;
 	for(i=0; i<3; i++){
@@ -41,6 +44,7 @@ bool isOpenTerm(char c){
 	return false;	
 }
 
+// Kiem tra xem 2 ki tu dua vao co phai la mot cap tuong ung cua nhau trong mang Terms duoc dinh nghia o tren hay khong ?
 bool matches(char x, char y){
 	int i,j;
 	for(i=0; i<3; i++){
@@ -74,6 +78,7 @@ char *readFile(char *fileName) {
     return code;
 }
 
+// Kiem tra xem xau dua vao co can bang ngoac hay khong ?
 bool isBalanced(char *xau){
 //	Init a stack
 	Stack* s = stackConstruct();
