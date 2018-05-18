@@ -245,7 +245,18 @@ int main(){
 					}
 					break;
 			case 3: printf("\n\tKiem tra su can bang cua cac the trong ma nguon HTML: ");
-					
+					char *fileName2 = "namhoang.html";
+					printf("\n\tFile HTML co ten: %s", fileName2);
+					printf("\n\tNoi dung cua file la: ");
+					printf("\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+					printf("\n%s", readFile(fileName2));
+					printf("\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+					bool canbang =	isHtmlBalanced(fileName2);
+					if(canbang == true){
+						printf("File %s CAN BANG the HTML", fileName2);
+					}else{
+						printf("File %s KHONG CAN BANG the HTML", fileName2);
+					}
 			
 					break;
 			case 4: return 1;
