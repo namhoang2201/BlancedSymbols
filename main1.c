@@ -42,18 +42,16 @@ char *readWord(char *code, char *word){
 	return word;
 }
 
-// Kiem tra xem tu dua vao co phai la the HTML hay khong ?
-//bool isHtmlTag(char *word){
-//	int i, j;
-//	for(i = 0; i< 35; i++){
-//		for(j =0; j< 2; j++){
-//			if(strcmp(word , HtmlTags[i][j]) == 0){
-//				return true;
-//			}
-//		}
-//	}
-//	return false;
-//}
+//Kiem tra xem tu dua vao co phai la the HTML hay khong ?
+bool isHtmlTag(char *word){
+	int i;
+	for(i = 0; i< 35; i++){
+		if((strcmp(word , htmlTags1[i]) == 0) || (strcmp(word , htmlTags2[i]) == 0)){
+				return true;
+		}
+	}
+	return false;
+}
 
 // Kiem tra xem ky tu c dua vao co phai la dau ngoac hay khong ?
 bool isTerm(char c){
