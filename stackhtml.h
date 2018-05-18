@@ -10,7 +10,7 @@ typedef struct StackNodeHtml{
 // Dinh nghia stackHtml
 typedef struct StackHtml{
 	StackNodeHtml *top;
-};
+} StackHtml;
 
 // Khoi tao stackHtml
 StackHtml *stackHtmlConstruct(){
@@ -37,7 +37,7 @@ int stackHtmlFull(){
 }
 
 // Them phan tu vao StackHtml
-int stackHtmlPush(StackHtml *s, char[] item){
+int stackHtmlPush(StackHtml *s, char item[]){
 	StackNodeHtml *node;
 	node = (StackNodeHtml*) malloc (sizeof(StackNodeHtml));
 	if(node == NULL){

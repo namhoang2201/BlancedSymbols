@@ -1,9 +1,12 @@
 #include<stdio.h>
 #include<conio.h>
+#include<math.h>
 #include<stdbool.h>
 #include<locale.h>
 #include<stdlib.h>
+#include<string.h>
 #include "stack.h"
+#include "stackHtml.h"
 
 char Terms[3][2] = {{'(',')'},{'[',']'},{'{','}'}};
 
@@ -131,6 +134,50 @@ char *readFile(char *fileName) {
     code[n] = '\0';        
 
     return code;
+}
+
+// Kiem tra xem file HTML dua vao co can bang cac the HTML hay khong ?
+bool isHtmlBalanced(char *fileName){
+	// Khoi tao 1 StackHtml
+	StackHtml* s = stackHtmlConstruct();
+	// Doc file html va luu tat ca noi dung vao 1 mang ky tu, tro boi con tro code
+	char* code = readFile(fileName);
+	// Duyet cac tu trong mang tu trich ra tu van ban txt, tu dau den cuoi, lay ra tung tu mot
+	// Doc tung tu mot
+	while(*code != '\0'){
+		// Cap phat bo nho de luu moi tu
+		char *word = (char*) malloc (20*sizeof(char));
+		// Luu tu vao word
+		word = readWord( code, word);
+		// Kiem tra xem tu dua vao co phai la the HTML khong ?, neu dung thi day vao StackHtml
+		if(isHtmlTag(word)){
+			if(isOpenHtmlTag(word)){
+				stackHtmlPush(s, word);
+				dispHtml(s);
+				printf("\n");
+			}else{
+				// Nguoc lai, tu dua vao la the dong => lay ra ptu o dinh stack va kiem tra xem
+				// no va phan tu dang xet co phai la 1 cap cua nhau hay khong ?
+				if(htmlMatches(topHtml(s), word)){
+					// Neu dung la 1 cap tuong ung, loai bo ptu o dinh stack va tiep tuc vong lap
+					stackHtmlPop(s);
+				}else{
+					// Nguoc lai, neu phat hien khong phai la 1 cap tuong ung cua nhau thi tra ve false luon !
+					return false;
+				}
+			}
+		}
+		
+		code = code + strlen(word) + 1;
+		free(word);
+	}
+	
+	// Sau cung, kiem tra StackHtml co rong hay khong ? Neu rong thi tra ve true, tuc la cang bang the HTML
+	if(stackHtmlEmpty(s)){
+		return true;
+	}
+	
+	return false;
 }
 
 // Kiem tra xem xau dua vao co can bang ngoac hay khong ?
