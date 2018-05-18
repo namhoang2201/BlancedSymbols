@@ -88,6 +88,17 @@ bool isOpenTerm(char c){
 	return false;	
 }
 
+// Kiem tra xem 2 tu dua vao co phai la mot cap the HTML tuong ung cua nhau hay khong (bao gom the mo va the dong tuong ung)
+bool htmlMatches(char *word1, char *word2){
+	int i;
+	for(i = 0; i< 35; i++){
+		if((strcmp(word1, htmlTags1[i]) == 0) && (strcmp(word2, htmlTags2[i]) == 0)){
+			return true;
+		}
+	}
+	return false;
+}
+
 // Kiem tra xem 2 ki tu dua vao co phai la mot cap tuong ung cua nhau trong mang Terms duoc dinh nghia o tren hay khong ?
 bool matches(char x, char y){
 	int i,j;
