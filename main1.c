@@ -66,6 +66,16 @@ bool isTerm(char c){
 	return false;
 }
 
+// Kiem tra xem tu dua vao co phai la the mo HTML hay khong ?
+bool isOpenHtmlTag(char *word){
+	int i;
+	for(i=0; i<35; i++){
+		if(strcmp(word, htmlTags1[i]) == 0){
+			return true;
+		}
+	}
+	return false;
+}
 
 // Kiem tra xem ky tu c dua vao co phai la ky tu mo ngoac hay khong ?
 bool isOpenTerm(char c){
