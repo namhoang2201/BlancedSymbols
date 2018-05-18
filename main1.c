@@ -8,6 +8,10 @@
 #include "stack.h"
 #include "stackHtml.h"
 
+// Balanced Symbols: Hoang Van Nam 20143022, Nguyen Duc Minh 20162728, KTLT20172 - 101925
+// Instructor: Ph.D Bui Thi Mai Anh
+// Complete: 05/18/2018
+
 // Mang 2 chieu dinh nghia cac cap ngoac tuong ung cua nhau
 char Terms[3][2] = {{'(',')'},{'[',']'},{'{','}'}};
 
