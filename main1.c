@@ -222,7 +222,9 @@ int main(){
 					char *fileName = "chuoingoacdon.txt";
 					printf("\n\tFile dau ngoac don co ten: %s", fileName);
 					printf("\n\tNoi dung cua file la: ");
+					printf("\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 					printf("\n\t%s", readFile(fileName));
+					printf("\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 					if(isBalanced(readFile(fileName))){
 						printf("\n\tChuoi ngoac don la CAN BANG !");
 					}else{
@@ -230,10 +232,12 @@ int main(){
 					}
 					break;
 			case 2: printf("\n\tKiem tra su can bang dau ngoac trong ma nguon C++: ");
-					char *fileName1 = "cplusplus.cpp";
+					char *fileName1 = "cplusplus";
 					printf("\n\tFile C++ co ten: %s", fileName1);
 					printf("\n\tNoi dung cua file la: ");
+					printf("\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 					printf("\n%s", readFile(fileName1));
+					printf("\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 					if(isBalanced(readFile(fileName1))){
 						printf("\n\tFile C++ CAN BANG ngoac don !");
 					}else{
