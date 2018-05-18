@@ -7,13 +7,12 @@
 
 char Terms[3][2] = {{'(',')'},{'[',']'},{'{','}'}};
 
-char **HtmlTags = {{'<html>','</html>'}, {'<head>','</head>'}, {'<body>','</body>'}, {'<title>','</title>'},
-		{'<h1>','</h1>'}, {'<h2>','</h2>'}, {'<h3>','</h3>'}, {'<h4>','</h4>'}, {'<h5>','</h5>'}, {'<h6>','</h6>'},
-		{'<ul>','</ul>'}, {'<ol>','</ol>'}, {'<li>','</li>'}, {'<dl>','</dl>'}, {'<dt>','</dt>'}, {'<table>','</table>'},
-		{'<td>','</td>'}, {'<tr>','</tr>'},{'<th>','</th>'}, {'<form>','</form>'}, {'<strong>','</strong>'},
-		{'<div>','</div>'}, {'<textarea>','</textarea>'}, {'<span>','</span>'}, {'<pre>','</pre>'}, {'<em>','</em>'},
-		{'<frameset>','</frameset>'}, {'<dd>','</dd>'}, {'<script>','</script>'}, {'<b>','</b>'}, {'<i>','</i>'},
-		{'<fieldset>','</fieldset>'}, {'<font>','</font>'}, {'<sub>','</sub>'}, {'<sup>','</sup>'} };
+char *htmlTags1[35] = { "<html>", "<head>", "<body>", "<title>", "<h1>", "<h2>", "<h3>", "<h4>", "<h5>", "<h6>", "<ul>", "<ol>", "<li>", 
+						"<dl>", "<dt>", "<table>", "<td>", "<tr>", "<th>", "<form>", "<strong>", "<div>", "<textarea>", "<span>", "<pre>",
+						"<em>", "<frameset>", "<dd>", "<script>", "<b>", "<i>", "<fieldset>", "<font>", "<sub>", "<sup>" };
+char *htmlTags2[35] = { "</html>", "</head>", "</body>", "</title>", "</h1>", "</h2>", "</h3>", "</h4>", "</h5>", "</h6>", "</ul>", "</ol>", "</li>", 
+						"</dl>", "</dt>", "</table>", "</td>", "</tr>", "</th>", "</form>", "</strong>", "</div>", "</textarea>", "</span>", "</pre>",
+						"</em>", "</frameset>", "</dd>", "</script>", "</b>", "</i>", "</fieldset>", "</font>", "</sub>", "</sup>" };
 
 // Kiem tra mot ki tu co phai la khoang trang khong
 int IsWhitespace(int ch) {
@@ -44,17 +43,17 @@ char *readWord(char *code, int* i, char *word){
 }
 
 // Kiem tra xem tu dua vao co phai la the HTML hay khong ?
-bool isHtmlTag(char *word){
-	int i, j;
-	for(i = 0; i< 35; i++){
-		for(j =0; j< 2; j++){
-			if(strcmp(word , HtmlTags[i][j]) == 0){
-				return true;
-			}
-		}
-	}
-	return false;
-}
+//bool isHtmlTag(char *word){
+//	int i, j;
+//	for(i = 0; i< 35; i++){
+//		for(j =0; j< 2; j++){
+//			if(strcmp(word , HtmlTags[i][j]) == 0){
+//				return true;
+//			}
+//		}
+//	}
+//	return false;
+//}
 
 // Kiem tra xem ky tu c dua vao co phai la dau ngoac hay khong ?
 bool isTerm(char c){
