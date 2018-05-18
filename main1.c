@@ -8,16 +8,19 @@
 #include "stack.h"
 #include "stackHtml.h"
 
+// Mang 2 chieu dinh nghia cac cap ngoac tuong ung cua nhau
 char Terms[3][2] = {{'(',')'},{'[',']'},{'{','}'}};
 
+// Mang 1 chieu dinh nghia cac the mo cua the HTML
 char *htmlTags1[35] = { "<html>", "<head>", "<body>", "<title>", "<h1>", "<h2>", "<h3>", "<h4>", "<h5>", "<h6>", "<ul>", "<ol>", "<li>", 
 						"<dl>", "<dt>", "<table>", "<td>", "<tr>", "<th>", "<form>", "<strong>", "<div>", "<textarea>", "<span>", "<pre>",
 						"<em>", "<frameset>", "<dd>", "<script>", "<b>", "<i>", "<fieldset>", "<font>", "<sub>", "<sup>" };
+// Mang 1 chieu dinh nghia cac the dong cua the HTML
 char *htmlTags2[35] = { "</html>", "</head>", "</body>", "</title>", "</h1>", "</h2>", "</h3>", "</h4>", "</h5>", "</h6>", "</ul>", "</ol>", "</li>", 
 						"</dl>", "</dt>", "</table>", "</td>", "</tr>", "</th>", "</form>", "</strong>", "</div>", "</textarea>", "</span>", "</pre>",
 						"</em>", "</frameset>", "</dd>", "</script>", "</b>", "</i>", "</fieldset>", "</font>", "</sub>", "</sup>" };
 
-// Kiem tra mot ki tu co phai la khoang trang khong
+// Kiem tra mot ki tu co phai la khoang trang khong ?
 int isWhitespace(int ch) {
 	return (ch == ' ') || (ch == '\n') || (ch == '\t');
 }
@@ -91,7 +94,7 @@ bool isOpenTerm(char c){
 	return false;	
 }
 
-// Kiem tra xem 2 tu dua vao co phai la mot cap the HTML tuong ung cua nhau hay khong (bao gom the mo va the dong tuong ung)
+// Kiem tra xem 2 tu dua vao co phai la mot cap the HTML tuong ung cua nhau hay khong ? (bao gom the mo va the dong tuong ung)
 bool htmlMatches(char *word1, char *word2){
 	int i;
 	for(i = 0; i< 35; i++){
@@ -147,8 +150,10 @@ bool isHtmlBalanced(char *fileName){
 	while(*code != '\0'){
 		// Cap phat bo nho de luu moi tu
 		char *word = (char*) malloc (20*sizeof(char));
+		
 		// Luu tu vao word
 		word = readWord( code, word);
+		
 		// Kiem tra xem tu dua vao co phai la the HTML khong ?, neu dung thi day vao StackHtml
 		if(isHtmlTag(word)){
 			if(isOpenHtmlTag(word)){
@@ -168,6 +173,7 @@ bool isHtmlBalanced(char *fileName){
 			}
 		}
 		
+		// Bo qua tu da doc, dich con tro den tu tiep theo trong mang ky tu lay tu mang code
 		code = code + strlen(word) + 1;
 		free(word);
 	}
@@ -177,6 +183,7 @@ bool isHtmlBalanced(char *fileName){
 		return true;
 	}
 	
+	// Tra ve false tuc la khong can bang the HTML
 	return false;
 }
 
@@ -207,6 +214,7 @@ bool isBalanced(char *xau){
 }
 
 int main(){
+	// n de chi so chuc nang, nhan gia tri tu 1 toi 4
 	int n;
 	printf("\nCHUONG TRINH KIEM TRA SU CAN BANG BIEU TUONG (DAU NGOAC HOAC CAC THE HTML)");
 	do{
@@ -255,7 +263,7 @@ int main(){
 					if(canbang == true){
 						printf("File %s CAN BANG the HTML", fileName2);
 					}else{
-						printf("File %s KHONG CAN BANG the HTML", fileName2);
+						printf("File %s KHONG CAN BANG cac the HTML", fileName2);
 					}
 			
 					break;

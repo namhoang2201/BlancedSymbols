@@ -15,7 +15,7 @@ Stack *stackConstruct(){
 	Stack *s;
 	s = (Stack*) malloc (sizeof(Stack));
 	if(s==NULL){
-//	No memory
+	// No memory
 		return NULL; 
 	}
 	s->top = NULL;
@@ -62,7 +62,7 @@ int stackPush(Stack *s, char item){
 	node = (StackNode*) malloc (sizeof(StackNode));
 	if(node == NULL){
 		stackFull(s);
-//		Tran stack, het bo nho
+	// Tran stack, het bo nho
 		return 1;
 	}
 	node->item = item;
@@ -76,7 +76,7 @@ char stackPop(Stack *s){
 	char item;
 	StackNode *node;
 	if(stackEmpty(s)){
-//		Empty stack, can't pop
+	// Empty stack, can't pop
 	return 'a';
 	}
 	node = s->top;
@@ -86,7 +86,7 @@ char stackPop(Stack *s){
 	return item;
 }
 
-//		Tra ve gia tri phan tu o dinh ngan xep nhung khong lay ra
+//	Tra ve gia tri phan tu o dinh ngan xep nhung khong lay ra
 char top(Stack *s){
 	if(stackEmpty(s)){
 		return 'a';

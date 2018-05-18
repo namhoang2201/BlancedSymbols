@@ -17,14 +17,14 @@ StackHtml *stackHtmlConstruct(){
 	StackHtml *s;
 	s = (StackHtml*) malloc (sizeof(StackHtml));
 	if(s==NULL){
-//	No memory
+	// No memory
 		return NULL; 
 	}
 	s->top = NULL;
 	return s;
 }
 
-// Kiem tra StackHtml rong
+// Kiem tra StackHtml rong	
 bool stackHtmlEmpty(StackHtml *s){
 	return (s->top == NULL);
 }
@@ -42,7 +42,7 @@ int stackHtmlPush(StackHtml *s, char item[]){
 	node = (StackNodeHtml*) malloc (sizeof(StackNodeHtml));
 	if(node == NULL){
 		stackHtmlFull();
-//		Tran stack, het bo nho
+	// Tran stack, het bo nho
 		return 1;
 	}
 	strcpy(node->item, item);
@@ -56,7 +56,7 @@ char *stackHtmlPop(StackHtml *s){
 	char item[10];
 	StackNodeHtml *node;
 	if(stackHtmlEmpty(s)){
-//		Empty stack, can't pop
+	// Empty stack, can't pop
 	return NULL;
 	}
 	node = s->top;
