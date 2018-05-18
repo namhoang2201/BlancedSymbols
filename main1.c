@@ -15,28 +15,28 @@ char *htmlTags2[35] = { "</html>", "</head>", "</body>", "</title>", "</h1>", "<
 						"</em>", "</frameset>", "</dd>", "</script>", "</b>", "</i>", "</fieldset>", "</font>", "</sub>", "</sup>" };
 
 // Kiem tra mot ki tu co phai la khoang trang khong
-int IsWhitespace(int ch) {
+int isWhitespace(int ch) {
 	return (ch == ' ') || (ch == '\n') || (ch == '\t');
 }
 
-// Doc tung tu mot, dau vao la con tro code toi mang cac ki tu
-char *readWord(char *code, int* i, char *word){
+// Doc tung tu mot, dau vao la con tro code toi mang cac ki tu, tra ve dia chi cua tu luu vao con tro word
+char *readWord(char *code, char *word){
 	int ch, pos = 0;
-	ch = code[*i];
-// Bo qua cac ki tu la khoang trang	
-	while(IsWhitespace(ch)){
-		(*i)++;
-		ch = code[*i];
+	ch = *code;
+	// Bo qua cac ki tu la khoang trang	
+	while(isWhitespace(ch)){
+		code++;
+		ch = *code;
 	}
 	
-// Gap cac ki tu khac khoang trang thi luu vao mot tu, con tro word la dia chi cua mang chua tu
-	while(!IsWhitespace(ch) && (ch != EOF)){
+	// Gap cac ki tu khac khoang trang thi luu vao mot tu, con tro word la dia chi cua mang chua tu
+	while(!isWhitespace(ch) && (ch != EOF)){
 		if(pos < 20){
 			word[pos] = (char) ch;
 			pos++;
-			(*i)++;
+			code++;
 		}
-		ch = code[*i];
+		ch = *code;
 	}
 	word[pos]= '\0';
 	return word;
